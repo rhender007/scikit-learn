@@ -137,6 +137,12 @@ Model selection and evaluation
    - Added the :class:`model_selection.RepeatedKFold` and
      :class:`model_selection.RepeatedStratifiedKFold`.
      :issue:`8120` by `Neeraj Gangwar`_.
+     - Added the :class: `feature_selection.SFS` class for sequential
+       feature selection for classifiers and regressors.
+       :issue:6545` by `Sebastian Raschka`_.
+
+Enhancements
+............
 
 Miscellaneous
 
@@ -348,6 +354,8 @@ Miscellaneous
 
    - :class:`dummy.DummyClassifier` and :class:`dummy.DummyRegressor`
      now accept non-finite features. :issue:`8931` by :user:`Attractadore`.
+   - In :class:`gaussian_process.GaussianProcessRegressor`, method ``predict``
+     is a lot faster with ``return_std=True`` by :user:`Hadrien Bertrand <hbertrand>`.
 
 Bug fixes
 .........
@@ -640,6 +648,10 @@ Miscellaneous
    - Update Sphinx-Gallery from 0.1.4 to 0.1.7 for resolving links in
      documentation build with Sphinx>1.5 :issue:`8010`, :issue:`7986` by
      :user:`Oscar Najera <Titan-C>`
+   - Fix :func:`sklearn.linear_model.BayesianRidge.fit` to return
+     ridge parameter `alpha_` and `lambda_` consistent with calculated
+     coefficients `coef_` and `intercept_`.
+     :issue:`8224` by :user:`Peter Gedeck <gedeck>`.
 
    - Add ``data_home`` parameter to :func:`sklearn.datasets.fetch_kddcup99`.
      :issue:`9289` by `Loic Esteve`_.
